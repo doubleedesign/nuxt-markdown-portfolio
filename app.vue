@@ -1,5 +1,19 @@
+<script setup lang="ts">
+</script>
+
 <template>
-	<div>
+	<header>
+		<SiteHeader/>
+	</header>
+	<main>
 		<NuxtPage/>
-	</div>
+	</main>
 </template>
+
+<style scoped lang="scss">
+@import './assets/mixins';
+
+main {
+	@include container;
+}
+</style>

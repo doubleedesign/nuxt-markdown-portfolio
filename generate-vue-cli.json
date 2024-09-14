@@ -1,0 +1,20 @@
+{
+	"component": {
+		"default": {
+			"path": "components",
+			"withTest": false,
+			"withStory": false,
+			"customTemplates": {
+				"component": "utils/templates/TemplateName.vue"
+			}
+		},
+		"document": {
+			"path": "content",
+			"withTest": false,
+			"withStory": false,
+			"customTemplates": {
+				"component": "utils/templates/TemplateName.md"
+			}
+		}
+	}
+}
