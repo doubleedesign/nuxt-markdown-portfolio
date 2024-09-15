@@ -5,7 +5,15 @@
 			"withTest": false,
 			"withStory": false,
 			"customTemplates": {
-				"component": "utils/templates/TemplateName.vue"
+				"component": "utils/templates/component/TemplateName.vue"
+			}
+		},
+		"layout": {
+			"path": "layouts",
+			"withTest": false,
+			"withStory": false,
+			"customTemplates": {
+				"component": "utils/templates/layout/TemplateName.vue"
 			}
 		},
 		"document": {

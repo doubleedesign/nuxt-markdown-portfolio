@@ -1,9 +1,34 @@
 @import 'theme';
+@import 'functions';
+@import 'mixins';
 
 body {
-	font-family: 'Palatino Linotype', 'Palatino', 'Book Antiqua', 'Georgia', serif;
 	padding: 0;
 	margin: 0;
-	background: map-get($colours, 'light');
+	background: #f7f7f7;
+	@include font(body);
 }
 
+h1, h2 {
+	@include font(heading);
+}
+
+blockquote {
+	@include font(accent);
+}
+
+@each $colour, $value in $colours {
+	.theme-#{$colour} {
+		background: $value;
+		color: color-contrast($value);
+
+		&--inverse {
+			background: color-contrast($value);
+			color: $value;
+		}
+	}
+}
+
+.page-content {
+	@include container;
+}

@@ -13,5 +13,15 @@ export default defineNuxtConfig({
 	content: {
 		documentDriven: true,
 	},
-	css: ['~/assets/global.scss']
+	css: ['~/assets/global.scss'],
+	app: {
+		head: {
+			link: [
+				{
+					rel: 'stylesheet',
+					href: 'https://use.typekit.net/daf8wql.css'
+				}
+			]
+		}
+	}
 });

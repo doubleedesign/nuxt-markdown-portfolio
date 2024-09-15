@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Logo from '../assets/doubleedesign-logo.svg';
+
 </script>
 
 <template>
@@ -7,6 +8,15 @@ import Logo from '../assets/doubleedesign-logo.svg';
 		<div class="site-header__logo">
 			<Logo/>
 		</div>
+		<nav class="site-header__menu">
+			<ContentNavigation v-slot="{ navigation }">
+				<ul>
+					<li v-for="link of navigation" :key="link._path">
+						<NuxtLink :to="link._path">{{ link.title }}</NuxtLink>
+					</li>
+				</ul>
+			</ContentNavigation>
+		</nav>
 	</header>
 </template>
 

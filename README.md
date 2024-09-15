@@ -1,16 +1,10 @@
-# Nuxt 3 Minimal Starter + my stuff
+# Nuxt 3 Portfolio Site
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## Setup
-
-Install dependencies:
+## Getting started
 
 ```bash
 npm install
 ```
-
-## Development Server
 
 Start the development server on `http://localhost:3000`:
 
@@ -18,6 +12,9 @@ Start the development server on `http://localhost:3000`:
 npm run dev
 ```
 
+See [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) for more general information.
+
+---
 ## New components
 
 I have set up [generate-vue-cli](https://www.npmjs.com/package/generate-vue-cli) with some custom configuration and a custom script.
@@ -34,8 +31,17 @@ To generate a new page based on the Markdown template in `utils/templates:`
 ```bash
 npm run generate document DocumentName
 ```
+The script will then prompt for some information to fill in the document frontmatter, and ask whether to create a custom layout template.
 
+**Note to self:** Custom frontmatter fields can be added and then accessed in the relevant Vue template(s) like so:
+```vue
+<script setup lang="ts">
+const { page } = useContent();
+const description = page.value.description;
+</script>
+```
 
+---
 ## Production
 
 Build the application for production:
