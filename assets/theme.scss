@@ -1,19 +1,30 @@
+//$colours: (
+//	primary: #8975e6,
+//	secondary: #CCCCFF,
+//	accent: #72e79a,
+//	success: #72e79a,
+//	warning: #ff9c7a,
+//	alert: #ff78a4,
+//	light: rgba(#8975e6, 0.2),
+//	dark: #40436d
+//);
+
 $colours: (
-	primary: #8975e6,
-	secondary: #f7f7f7,
-	accent: #73F5A0,
-	success: #73F5A0,
-	warning: #ff9c7a,
-	alert: #ff78a4,
-	light: rgba(#8975e6, 0.2),
-	dark: #000e6c
+	primary: #6312DD,
+	secondary: #00c29e,
+	accent: #B4FA14,
+	success: #B4FA14,
+	warning:  #ff7847,
+	alert: #ff0077,
+	light: rgba(#CCCCFF, 0.5),
+	dark: #1f1926
 );
 
 $font-family-sans: "ff-real-headline-pro", sans-serif;
 $font-family-serif: "Palatino Linotype", "Palatino", "Book Antiqua", "Georgia", serif;
 
 // 1.0625rem = 17px; Palatino looks nicest at that size IMO
-@function typescale-size($steps: 0, $base-size: 1.0625rem, $ratio: 1.125) {
+@function typescale-size($steps: 0, $base-size: 1.0625rem, $ratio: 1.2) {
 	@return $base-size * pow($ratio, $steps);
 }
 

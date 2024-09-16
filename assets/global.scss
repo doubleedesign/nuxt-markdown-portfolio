@@ -2,6 +2,10 @@
 @import 'functions';
 @import 'mixins';
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	padding: 0;
 	margin: 0;
@@ -9,8 +13,24 @@ body {
 	@include font(body);
 }
 
-h1, h2 {
+h1, h2, h3, h4, h5, h6 {
 	@include font(heading);
+}
+
+h1 {
+	font-size: typescale-size(3);
+}
+
+h2 {
+	font-size: typescale-size(2);
+}
+
+h3 {
+	font-size: typescale-size(1);
+}
+
+h4, h5, h6 {
+	font-size: typescale-size(0);
 }
 
 blockquote {
