@@ -10,16 +10,17 @@
 //);
 
 $colours: (
-	primary: #6312DD,
+	primary: #662d91,
 	secondary: #00c29e,
 	accent: #B4FA14,
-	success: #B4FA14,
-	warning:  #ff7847,
-	alert: #ff0077,
+	success: #00c29e,
+	warning:  #ff855a,
+	alert: #ec5070,
 	light: rgba(#CCCCFF, 0.5),
 	dark: #1f1926
 );
 
+$body-bg: #f9f9f9;
 $font-family-sans: "ff-real-headline-pro", sans-serif;
 $font-family-serif: "Palatino Linotype", "Palatino", "Book Antiqua", "Georgia", serif;
 

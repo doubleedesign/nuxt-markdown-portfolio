@@ -10,6 +10,12 @@
 	@media (min-width: 768px) {
 		justify-content: space-between;
 	}
+}
+
+@mixin container-narrow {
+}
+
+@mixin container-wide {
 
 	@media (min-width: 1600px) {
 		max-width: 1440px;

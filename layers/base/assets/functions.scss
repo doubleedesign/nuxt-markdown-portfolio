@@ -19,11 +19,10 @@
  * (https://polished.js.org/docs/#getcontrast, https://polished.js.org/docs/#meetscontrastguidelines)
  * to progressively adjust a given colour until it meets WCAG 2.0 guidelines.
  */
-@function colorful-contrast($background-colour, $colour, $max-attempts: 10, $attempt: 0) {
+@function colorful-contrast($background-colour, $colour, $threshold: 4.5, $max-attempts: 10, $attempt: 0) {
 	$bgLuminance: getLuminance($background-colour);
 	$colourLuminance: getLuminance($colour);
 	$contrast: contrast-ratio($background-colour, $colour);
-	$threshold: 4.5; // WCAG 2.0 Level AA guideline
 
 	// Cap the number of attempts to prevent exceeding the max call stack size
 	@if($attempt > $max-attempts) {
@@ -43,6 +42,14 @@
 			@return colorful-contrast($background-colour, lighten($colour, 5%), $max-attempts, $attempt + 1);
 		}
 	}
+}
+
+/**
+ * Lighten or darken a colour based on its background colour to ensure sufficient contrast
+ * with a lower threshold; intended for larger text.
+ */
+@function colorful-contrast-large($background-colour, $colour) {
+	@return colorful-contrast($background-colour, $colour, 3.1);
 }
 
 /**
