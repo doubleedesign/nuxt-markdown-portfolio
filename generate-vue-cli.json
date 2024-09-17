@@ -1,7 +1,7 @@
 {
 	"component": {
 		"default": {
-			"path": "components",
+			"path": "layers/base/components",
 			"withTest": false,
 			"withStory": false,
 			"customTemplates": {
@@ -9,7 +9,7 @@
 			}
 		},
 		"layout": {
-			"path": "layouts",
+			"path": "layers/base/layouts",
 			"withTest": false,
 			"withStory": false,
 			"customTemplates": {

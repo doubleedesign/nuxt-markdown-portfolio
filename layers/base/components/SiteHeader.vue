@@ -21,9 +21,6 @@ import Logo from '../assets/doubleedesign-logo.svg';
 </template>
 
 <style scoped lang="scss">
-@import '../assets/mixins';
-@import '../assets/theme';
-
 .site-header {
 	padding-block: 1rem;
 	@include container;

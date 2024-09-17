@@ -9,10 +9,6 @@ const { page } = useContent();
 </template>
 
 <style scoped lang="scss">
-@import '../assets/theme';
-@import '../assets/functions';
-@import '../assets/mixins';
-
 .page-content--template-name {
 
 }

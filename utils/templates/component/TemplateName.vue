@@ -9,10 +9,6 @@
 </template>
 
 <style scoped lang="scss">
-@import '../assets/theme';
-@import '../assets/functions';
-@import '../assets/mixins';
-
 .template-name {
 
 }

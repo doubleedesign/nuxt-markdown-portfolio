@@ -16,10 +16,6 @@ import { faFacebook } from '@awesome.me/kit-0d952598a1/icons/classic/brands';
 </template>
 
 <style scoped lang="scss">
-@import '../assets/theme';
-@import '../assets/functions';
-@import '../assets/mixins';
-
 .social-links {
 
 }

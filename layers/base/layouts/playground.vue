@@ -14,10 +14,7 @@ const colours = ['secondary', 'primary', 'accent', 'success', 'warning', 'alert'
 	</main>
 </template>
 
-<style scoped lang="scss">
-@import '../assets/theme';
-@import '../assets/functions';
-@import '../assets/mixins';
+<style scoped lang="scss">;
 
 .colours {
 	display: flex;

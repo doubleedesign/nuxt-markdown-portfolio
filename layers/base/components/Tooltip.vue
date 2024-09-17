@@ -55,8 +55,6 @@ const handleMouseOut = () => {
 </template>
 
 <style scoped lang="scss">
-@import '../assets/theme';
-@import '../assets/functions';
 
 .tooltip {
 	position: relative;

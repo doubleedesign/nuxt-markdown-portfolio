@@ -35,10 +35,6 @@ import { faMobileAlt } from '@awesome.me/kit-0d952598a1/icons/sharp/solid';
 </template>
 
 <style scoped lang="scss">
-@import '../assets/theme';
-@import '../assets/functions';
-@import '../assets/mixins';
-
 .contact-details {
 
 }
