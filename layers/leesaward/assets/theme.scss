@@ -1,0 +1,52 @@
+$colours: (
+	primary: #8975e6,
+	secondary: #CCCCFF,
+	accent: #72e79a,
+	success: #72e79a,
+	warning: #ff9c7a,
+	alert: #ff78a4,
+	light: rgba(#8975e6, 0.2),
+	dark: #40436d
+);
+
+$body-bg: #f9f9f9;
+$font-family-sans: "ff-real-headline-pro", sans-serif;
+$font-family-serif: "Palatino Linotype", "Palatino", "Book Antiqua", "Georgia", serif;
+
+// 1.0625rem = 17px; Palatino looks nicest at that size IMO
+@function typescale-size($steps: 0, $base-size: 1.0625rem, $ratio: 1.2) {
+	@return $base-size * pow($ratio, $steps);
+}
+
+$fonts: (
+	heading: (
+		family: $font-family-sans,
+		weight: 500,
+		size: typescale-size(2),
+		line-height: 1.3,
+	),
+	body: (
+		family: $font-family-serif,
+		weight: 200,
+		size: typescale-size(0),
+		line-height: 1.5,
+	),
+	accent: (
+		family: $font-family-sans,
+		style: italic,
+		weight: 500,
+		size: typescale-size(1),
+		line-height: 1.3,
+	)
+);
+
+@mixin font($type) {
+	$font: map-get($fonts, $type);
+	font-weight: map-get($font, weight);
+	font-size: map-get($font, size);
+	line-height: map-get($font, line-height);
+	font-family: map-get($font, family);
+	@if map-has-key($font, style) {
+		font-style: map-get($font, style);
+	}
+}

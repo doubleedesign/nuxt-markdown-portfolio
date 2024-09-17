@@ -4,6 +4,10 @@ const { page, layout } = useContent();
 
 <template>
 	<NuxtLayout :name="layout">
-		<ContentRenderer :value="page" />
+		<ContentRenderer :value="page">
+			<template #empty>
+				<p>No content found.</p>
+			</template>
+		</ContentRenderer>
 	</NuxtLayout>
 </template>

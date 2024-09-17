@@ -3,14 +3,16 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "nuxt build",
-		"dev:doublee": "nuxt dev --config-file ./layers/doubleedesign/nuxt.config.ts",
-		"dev:leesa": "nuxt dev --config-file ./layers/leesaward/nuxt.config.ts",
-		"generate:nuxt": "nuxt generate",
+		"dev:doublee": "NUXT_CURRENT_LAYER=doubleedesign PORT=3001 nuxt dev --config-file ./layers/doubleedesign/nuxt.config.ts",
+		"dev:leesa": "NUXT_CURRENT_LAYER=leesaward PORT=3002 nuxt dev --config-file ./layers/leesaward/nuxt.config.ts",
+		"lint": "eslint --fix",
+		"generate": "node utils/generate.js",
 		"preview": "nuxt preview",
 		"postinstall": "nuxt prepare",
-		"lint": "eslint --fix",
-		"generate": "node utils/generate.js"
+		"generate:nuxt": "nuxt generate",
+		"build": "nuxt build",
+		"build:static:doublee": "NUXT_CURRENT_LAYER=doubleedesign nuxt generate --config-file ./layers/doubleedesign/nuxt.config.ts",
+		"build:static:leesa": "NUXT_CURRENT_LAYER=leesaward nuxt generate --config-file ./layers/leesaward/nuxt.config.ts"
 	},
 	"dependencies": {
 		"@awesome.me/kit-0d952598a1": "^1.0.4",
