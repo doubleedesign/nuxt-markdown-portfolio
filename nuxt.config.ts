@@ -1,3 +1,4 @@
+import { resolve } from 'node:path';
 const currentLayer = process.env.NUXT_CURRENT_LAYER;
 
 export default defineNuxtConfig({
@@ -8,6 +9,17 @@ export default defineNuxtConfig({
 	],
 	content: {
 		documentDriven: true,
-		dir: `${process.cwd()}/layers/${currentLayer}/content/`,
+		// This loads pages from the current layer in addition to the default content directory
+		sources: {
+			current: {
+				driver: 'fs',
+				prefix: '/',
+				base: resolve(__dirname, `layers/${currentLayer}/content`),
+			}
+		}
 	},
+	// This bit ensures app.vue is used from the current layer
+	extends: [
+		`./layers/${currentLayer}`
+	]
 });

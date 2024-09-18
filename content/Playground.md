@@ -1,7 +1,7 @@
 ---
 title: Playground | Double-E Design
 layout: playground
-draft: false
+draft: true
 navigation: false
 author: Leesa Ward
 date: 2024-09-15

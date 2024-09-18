@@ -23,6 +23,22 @@
 			"customTemplates": {
 				"component": "utils/templates/TemplateName.md"
 			}
+		},
+		"document-doubleedesign": {
+			"path": "layers/doubleedesign/content",
+			"withTest": false,
+			"withStory": false,
+			"customTemplates": {
+				"component": "utils/templates/TemplateName.md"
+			}
+		},
+		"document-leesaward": {
+			"path": "layers/leesaward/content",
+			"withTest": false,
+			"withStory": false,
+			"customTemplates": {
+				"component": "utils/templates/TemplateName.md"
+			}
 		}
 	}
 }

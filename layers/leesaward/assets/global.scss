@@ -1,5 +1,3 @@
-@import 'theme';
-
 * {
 	box-sizing: border-box;
 }
@@ -35,6 +33,10 @@ blockquote {
 	@include font(accent);
 }
 
+.page-content {
+	@include container;
+}
+
 @each $colour, $value in $colours {
 	.theme-#{$colour} {
 		background: $value;
@@ -45,8 +47,4 @@ blockquote {
 			color: colorful-contrast($body-bg, $value);
 		}
 	}
-}
-
-.page-content {
-	@include container;
 }

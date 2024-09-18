@@ -15,6 +15,7 @@ const rl = readline.createInterface({
  *      npm run generate component SiteLogo will create components/SiteLogo.vue
  *      npm run generate layout FeaturedItem will create layouts/FeaturedItem.vue
  *      npm run generate document About will create content/About.md and ask some questions
+ *      npm run generate document About --layer=leesaward will create layers/leesaward/content/About.md and ask some questions
  */
 
 const type = process.argv[2];
@@ -27,10 +28,24 @@ if(type === 'layout') {
     execSync(`npx generate-vue-cli component ${name} --type=layout --flat`, { stdio: 'inherit' });
 }
 else if(type === 'document') {
+    let filePath = `./content/${name}.md`;
+    const layer = process.env.npm_config_layer;
+    if(layer && (layer !== 'doubleedesign' && layer !== 'leesaward')) {
+        console.error(chalk.red('Invalid layer. Valid options are: doubleedesign or leesaward.'));
+        process.exit(1);
+    }
+
     // Generate the initial document and then read it back in
-    execSync(`npx generate-vue-cli component ${name} --type=document --flat`, { stdio: 'inherit' });
-    const filePath = `./content/${name}.md`;
+    if(layer) {
+        execSync(`npx generate-vue-cli component ${name} --type=document-${layer} --flat`, { stdio: 'inherit' });
+        filePath = `./layers/${layer}/content/${name}.md`;
+    }
+    else {
+        execSync(`npx generate-vue-cli component ${name} --type=document --flat`, { stdio: 'inherit' });
+    }
     let fileContent = readFileSync(filePath, 'utf8');
+
+    // Update the document with some additional information
     fileContent = fileContent
         .replace(`title: ${name}`, 'title: ' + Case.title(name))
         .replace('date: YYYY-MM-DD', 'date: ' + new Date().toISOString().split('T')[0])

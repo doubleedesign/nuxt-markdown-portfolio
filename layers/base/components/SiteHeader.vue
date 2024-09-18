@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import Logo from '../assets/doubleedesign-logo.svg';
-
 </script>
 
 <template>
 	<header class="site-header">
 		<div class="site-header__logo">
-			<Logo/>
+			<NuxtLink to="/">
+				<slot name="logo"/>
+			</NuxtLink>
 		</div>
 		<nav class="site-header__menu">
 			<ContentNavigation v-slot="{ navigation }">
