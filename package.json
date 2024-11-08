@@ -1,18 +1,17 @@
 {
-	"name": "nuxt-app",
+	"name": "nuxt-portfolio",
 	"private": true,
 	"type": "module",
+	"version": "0.0.1",
+	"web-types": "./web-types.json",
 	"scripts": {
-		"dev:doublee": "NUXT_CURRENT_LAYER=doubleedesign PORT=3001 nuxt dev --config-file ./layers/doubleedesign/nuxt.config.ts",
-		"dev:leesa": "NUXT_CURRENT_LAYER=leesaward PORT=3002 nuxt dev --config-file ./layers/leesaward/nuxt.config.ts",
+		"dev": "nuxt dev --config-file ./nuxt.config.ts",
 		"lint": "eslint --fix",
 		"generate": "node utils/generate.js",
 		"preview": "nuxt preview",
 		"postinstall": "nuxt prepare",
-		"generate:nuxt": "nuxt generate",
-		"build": "nuxt build",
-		"build:static:doublee": "NUXT_CURRENT_LAYER=doubleedesign nuxt generate --config-file ./layers/doubleedesign/nuxt.config.ts",
-		"build:static:leesa": "NUXT_CURRENT_LAYER=leesaward nuxt generate --config-file ./layers/leesaward/nuxt.config.ts"
+		"generate:nuxt": "nuxt generate --config-file ./nuxt.config.ts",
+		"build": "nuxt build"
 	},
 	"dependencies": {
 		"@awesome.me/kit-0d952598a1": "^1.0.4",
@@ -20,9 +19,12 @@
 		"@nuxt/content": "^2.13.2",
 		"nuxt": "^3.13.0",
 		"vue": "latest",
-		"vue-router": "latest"
+		"vue-router": "latest",
+		"vue-tippy": "^6.5.0"
 	},
 	"devDependencies": {
+		"@doubleedesign/animate-into-view": "^1.0.0",
+		"@doubleedesign/hover.scss": "https://github.com/doubleedesign/Hover.scss#1.0.2",
 		"@stylistic/eslint-plugin-ts": "^2.8.0",
 		"@typescript-eslint/eslint-plugin": "^8.5.0",
 		"@typescript-eslint/parser": "^8.5.0",
@@ -38,6 +40,7 @@
 		"sass": "^1.78.0",
 		"sass-loader": "^16.0.1",
 		"vite-svg-loader": "^5.1.0",
-		"vue-eslint-parser": "^9.4.3"
+		"vue-eslint-parser": "^9.4.3",
+		"vue-svg-loader": "^0.16.0"
 	}
 }

@@ -1,0 +1,30 @@
+{
+	"framework": "vue",
+	"name": "nuxt-portfolio",
+	"version": "0.0.1",
+	"contributions": {
+		"html": {
+			"vue-directives": [
+				{
+					"name": "tippy",
+					"description": "Custom directive for tooltips using Tippy.js using VueTippy",
+					"doc-url": "https://vue-tippy.netlify.app/",
+					"modifiers": [
+						{
+							"name": "placement",
+							"description": "Defines the position of the tooltip.",
+							"values": ["top", "bottom", "left", "right"]
+						}
+					],
+					"arguments": [
+						{
+							"name": "content",
+							"description": "The tooltip content displayed on hover.",
+							"type": "string"
+						}
+					]
+				}
+			]
+		}
+	}
+}

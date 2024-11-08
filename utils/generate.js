@@ -15,7 +15,6 @@ const rl = readline.createInterface({
  *      npm run generate component SiteLogo will create components/SiteLogo.vue
  *      npm run generate layout FeaturedItem will create layouts/FeaturedItem.vue
  *      npm run generate document About will create content/About.md and ask some questions
- *      npm run generate document About --layer=leesaward will create layers/leesaward/content/About.md and ask some questions
  */
 
 const type = process.argv[2];

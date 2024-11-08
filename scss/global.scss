@@ -1,0 +1,117 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	@include font(body);
+}
+
+section {
+	scroll-margin-top: 9rem;
+	@include container;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	@include font(heading);
+}
+
+h1 {
+	font-family: "gelica", sans-serif;
+	font-weight: 600;
+	font-size: typescale-size(3);
+	color: map-get($colours, secondary);
+
+	@include media-breakpoint-up(xl) {
+		font-size: typescale-size(5);
+		line-height: 1.2;
+	}
+
+	span {
+		display: block;
+		font-size: 0.7em;
+		font-family: solitaire-mvb-pro-light, sans-serif;
+		font-weight: 300;
+
+		@include media-breakpoint-up(xl) {
+			font-size: 0.6em;
+		}
+	}
+}
+
+h2 {
+	font-family: "solitaire-mvb-pro", sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--color-primary);
+	text-transform: uppercase;
+}
+
+h3 {
+	font-family: "gelica", sans-serif;
+	font-weight: 600;
+	font-size: 1.2rem;
+
+	@include media-breakpoint-up(lg) {
+		font-size: typescale-size(3);
+	}
+
+	span {
+		font-family: "solitaire-mvb-pro", sans-serif;
+		font-weight: 400;
+		font-size: 0.6em;
+		display: block;
+		text-transform: uppercase;
+	}
+}
+
+p, li {
+	line-height: 1.4;
+
+	@media (min-width: 1100px) {
+		font-size: 1.1rem;
+	}
+}
+
+.lead {
+	font-family: "gelica", sans-serif;
+	font-weight: 600;
+	font-size: 1.2rem;
+	line-height: 1.2;
+
+	@media (min-width: 1100px) {
+		font-size: 1.44rem;
+	}
+}
+
+a {
+	transition: all 0.2s ease-in-out;
+}
+
+blockquote {
+	@include font(accent);
+}
+
+a {
+	transition: all 0.2s ease-in-out;
+}
+
+.page-content {
+	@include container;
+}
+
+@each $colour, $value in $colours {
+	.theme-#{$colour} {
+		background: $value;
+		color: color-contrast($value);
+
+		&--inverse {
+			color: colorful-contrast(#FFF, $value);
+		}
+	}
+}
